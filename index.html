@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Documentation Page</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>How to create an array of numbers in javascript</h2>
+    <nav id="navbar">
+      <h2>Contents</h2>
+      <ul>
+        <li><a class="nav-link" href="#for_loop">For Loop</a></li>
+        <li>
+          <a class="nav-link" href="#ES6_spread_operator"
+            >ES6 spread operator</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="#Arrays.from()_function"
+            >Arrays.from() function
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#lodash_range_function"
+            >lodash range function</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <h2>How to create an array of numbers for a given range in javascript?</h2>
+
+    <main id="main-doc">
+      <section id="for_loop" class="main-section">
+        <header id="header">Using for loop</header>
+        <p>
+          Using for loop with index assigned with initial number and increment
+          by 1 until end of the number, and add an index to an array.
+        </p>
+        <br />
+        <p>
+          Here is an example to create an array of sequence numbers from 1 to
+          50.
+        </p>
+        <code id="for_loop_example">
+          var numbers = []; <br />
+          for (var i = 1; i <= 50; i++) { <br />
+          numbers.push(i); <br />
+          }<br />
+          console.log(numbers)
+        </code>
+        <strong><p>Output:</p></strong>
+        <code> [ <br />1, 2, 3, 4, 5,6, 7, 8, 9, 10 <br />] </code>
+      </section>
+      <section id="ES6_spread_operator" class="main-section">
+        <header id="header">Using the ES6 spread operator</header>
+        <p>
+          ES6 provides spread operatoruses to include an array of values of an
+          array. The generated sequence of numbers using the spread operator and
+          keys method in es6
+        </p>
+        <code>
+          var array = [...Array(10).keys()];<br />
+          console.log(array)
+        </code>
+        <p><strong>Output:</strong></p>
+        [<br />
+        0, 1, 2, 3, 4,5, 6, 7, 8, 9 <br />
+        ]
+      </section>
+      <section id="Arrays.from()_function" class="main-section">
+        <header id="header">Using Arrays.from()_function</header>
+        <p>
+          The .from() method is a static method of the Array object in
+          JavaScript ES6. It creates a new, shallow-copied Array instance from
+          an array-like or iterable object like map and set.
+        </p>
+        <p>
+          his method returns an array from any object with a length property.
+          You can use it to create an Array of numbers within a specified range.
+        </p>
+
+        <code
+          >const arrayRange = (start, stop, step) => <br />Array.from( <br />{
+          length: (stop - start) / step + 1 },<br />
+          (value, index) => start + index * step <br />);<br />
+
+          console.log(arrayRange(1, 5, 1)); // [1,2,3,4,5]
+        </code>
+      </section>
+      <section id="lodash_range_function" class="main-section">
+        <header id="header">Using the loadash Range Function</header>
+        <p>
+          if the application uses the lodash library, It provides a range
+          function that iterates with a range of min and max values
+        </p>
+
+        <code> _.range([start], stop, [step]) </code>
+        <p>
+          <code>start</code>: It is a starting number or initial number,
+          <code>Stop</code>: is the maximum value that needs to increment too.
+          <code>Step</code>: needs value which increments by how much value,
+          Default is 1.
+        </p>
+        <code>_.range(1, 10);</code>
+        <p><strong>Output:</strong></p>
+        <code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code>
+      </section>
+    </main>
+  </body>
+</html>
